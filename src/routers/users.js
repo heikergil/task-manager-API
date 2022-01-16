@@ -3,12 +3,8 @@ const router = new express.Router()
 const User = require('../models/user')
 const auth = require('../middleware/auth')
 const multer  = require('multer')
-<<<<<<< HEAD
-const { sendWelcomeEmail, sendEmailWhenUserIsDeleted } = require("../emails/account")
-=======
 const sharp = require('sharp')
 
->>>>>>> 22a1b83d19fe93fb606143eb206d223ca4c4d6b7
 
 
 // Add user
