@@ -4,13 +4,13 @@ const User = require('../models/user')
 const auth = require('../middleware/auth')
 const multer  = require('multer')
 const sharp = require('sharp')
+const { sendWelcomeEmail, sendEmailWhenUserIsDeleted } = require('../emails/account')
 
 
 
 // Add user
 router.post("/users", async (req, res) => {
     const user = new User(req.body);
-  
     try {
       await user.save();
       sendWelcomeEmail(user.email, user.name)

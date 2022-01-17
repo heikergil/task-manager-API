@@ -8,7 +8,12 @@ const sendWelcomeEmail = (email, name) => {
         from:"gilheyker@gmail.com",
         subject: "Welcome to task manager app",
         text: `Welcome to the app, ${name}. let me know how you get along with the app`
-    })
+    }).then(() => {
+        console.log('Email sent')
+      })
+      .catch((error) => {
+        console.error(error)
+      })
 }
 
 const sendEmailWhenUserIsDeleted = (email, name) => {
@@ -17,7 +22,12 @@ const sendEmailWhenUserIsDeleted = (email, name) => {
         from:"gilheyker@gmail.com",
         subject: "Sorry to see you go",
         text: `Goodbye ${name}, let me know is there is something we could have done better`
-    })
+    }).then(() => {
+        console.log('Email sent')
+      })
+      .catch((error) => {
+        console.error(error)
+      })
 }
 
 
